@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bkrxnd66m8rb6"]
+
+[node name="Hi" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 664.0
+offset_bottom = 196.0
+text = "Hello I'm testing"
