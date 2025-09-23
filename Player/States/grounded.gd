@@ -1,25 +1,29 @@
 class_name Grounded extends State
 
-var player
+const WALK_SPEED = 2000
 
-func _ready() -> void:
-	var player = self.get_parent().get_parent()
+func _init(player_reference, statemgr) -> void:
+	super(player_reference, statemgr)
 
-func _physics_process(delta) -> void:
+func run(delta) -> void:
 	#this if statement is ugly as hell but makes sure the player stops walking
-	if Input.is_action_pressed("left") and Input.is_action_pressed("left") \
-	or not Input.is_action_pressed("left") and Input.is_action_pressed("right"):
+	if Input.is_action_pressed("left") and Input.is_action_pressed("right") \
+	or not Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
 		stand()
 	elif Input.is_action_pressed("right"):
-		walk(true)
+		walk(true, delta)
 	elif Input.is_action_pressed("left"):
-		walk(false)
+		walk(false, delta)
+	self.player_reference.body.move_and_slide()
+	
+	if not self.player_reference.body.is_on_floor():
+		statemgr.change_state(statemgr.States[statemgr.StateKeys.FALL])
 
-func walk(is_right: bool):
+func walk(is_right: bool, delta):
 	if is_right:
-		player.velocity.x = 10
+		self.player_reference.body.velocity.x = WALK_SPEED * delta
 	if not is_right:
-		player.velocity.x = -10
+		self.player_reference.body.velocity.x = -WALK_SPEED * delta
 
 func stand():
-	player.velocity.x = 0
+	self.player_reference.body.velocity.x = 0

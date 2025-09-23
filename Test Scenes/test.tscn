@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://mticjsf1wehg"]
+
+[ext_resource type="PackedScene" uid="uid://btc5ll722qbtl" path="res://Player/Player.tscn" id="1_p2iba"]
+[ext_resource type="Script" uid="uid://5fg48ufbyg58" path="res://Test Scenes/character_body_2d.gd" id="2_al1cx"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8uh7m"]
+distance = -594.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_al1cx"]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p2iba"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_p2iba"]
+a = Vector2(224.77, 495.27002)
+b = Vector2(-58.23, 210.27)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_p2iba")]
+position = Vector2(125.765, 94.48)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(572, 53)
+shape = SubResource("WorldBoundaryShape2D_8uh7m")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(40.06, 125.04)
+physics_material_override = SubResource("PhysicsMaterial_al1cx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_p2iba")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(48.23, 221.73)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("SegmentShape2D_p2iba")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_al1cx")
