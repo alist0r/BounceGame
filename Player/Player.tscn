@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bw4jgkrmab3ou" path="res://Player/Bodies/UprightForm.tscn" id="3_ddoul"]
 
 [node name="Player" type="Node2D"]
+physics_interpolation_mode = 2
 script = ExtResource("1_3qydi")
 BallBodyScene = ExtResource("2_tok1r")
 UprightBodyScene = ExtResource("3_ddoul")

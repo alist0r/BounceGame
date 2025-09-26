@@ -17,6 +17,7 @@ b = Vector2(-58.23, 210.27)
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_p2iba")]
+physics_interpolation_mode = 0
 position = Vector2(125.765, 94.48)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
