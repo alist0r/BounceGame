@@ -2,9 +2,6 @@ class_name Grounded extends State
 
 const WALK_SPEED = 200
 
-func _init(player_reference, statemgr) -> void:
-	super(player_reference, statemgr)
-
 func run(delta) -> void:
 	#this if statement is ugly as hell but makes sure the player stops walking
 	walk(delta)
