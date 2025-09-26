@@ -15,7 +15,8 @@ func run(delta) -> void:
 	elif Input.is_action_pressed("left"):
 		walk(false, delta)
 	self.player_reference.body.move_and_slide()
-	
+	if Input.is_action_pressed("jump"):
+		jump()
 	if not self.player_reference.body.is_on_floor():
 		statemgr.change_state(statemgr.States[statemgr.StateKeys.FALL])
 
@@ -27,3 +28,7 @@ func walk(is_right: bool, delta):
 
 func stand():
 	self.player_reference.body.velocity.x = 0
+
+#TODO dynamic jumping
+func jump():
+	self.player_reference.body.velocity.y = -700
