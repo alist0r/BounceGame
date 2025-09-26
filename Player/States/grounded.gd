@@ -1,6 +1,6 @@
 class_name Grounded extends State
 
-const WALK_SPEED = 2000
+const WALK_SPEED = 200
 
 func _init(player_reference, statemgr) -> void:
 	super(player_reference, statemgr)
@@ -8,7 +8,7 @@ func _init(player_reference, statemgr) -> void:
 func run(delta) -> void:
 	#this if statement is ugly as hell but makes sure the player stops walking
 	walk(delta)
-	if Input.is_action_pressed("jump"):
+	if Input.is_action_just_pressed("jump"):
 		jump()
 	self.player_reference.body.move_and_slide()
 	if not self.player_reference.body.is_on_floor():
@@ -16,7 +16,7 @@ func run(delta) -> void:
 
 #TODO speed ramping
 func walk(delta):
-	self.player_reference.body.velocity.x = self.player_reference.wish_dir.x * WALK_SPEED * delta
+	self.player_reference.body.velocity.x = self.player_reference.wish_dir.x * WALK_SPEED
 
 #TODO dynamic jumping
 func jump():
