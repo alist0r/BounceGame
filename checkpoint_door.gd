@@ -6,7 +6,7 @@ extends Area2D
 func _ready():
 	colShp.disabled = true # Collision shape not active
 
-func _process(delta: float) -> void:
+#func _process(delta: float) -> void:
 	
 
 func _activateCollShape():
