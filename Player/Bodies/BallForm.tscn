@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://djwty2xl7qsms"]
+
+[ext_resource type="Script" uid="uid://pkkcci7r4qan" path="res://Player/Bodies/ball_form.gd" id="1_ych2y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vm5qv"]
+bounce = 0.9
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ych2y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ygg2m"]
+
+[node name="BallForm" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_vm5qv")
+script = ExtResource("1_ych2y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ych2y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+scale = Vector2(0.74, 0.74)
+shape = SubResource("CircleShape2D_ygg2m")
+target_position = Vector2(0, 5.56)
+max_results = 1

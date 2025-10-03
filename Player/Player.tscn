@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://btc5ll722qbtl"]
+
+[ext_resource type="Script" uid="uid://k2ha54aijvfl" path="res://Player/player.gd" id="1_3qydi"]
+[ext_resource type="PackedScene" uid="uid://djwty2xl7qsms" path="res://Player/Bodies/BallForm.tscn" id="2_tok1r"]
+[ext_resource type="PackedScene" uid="uid://bw4jgkrmab3ou" path="res://Player/Bodies/UprightForm.tscn" id="3_ddoul"]
+
+[node name="Player" type="Node2D"]
+physics_interpolation_mode = 2
+script = ExtResource("1_3qydi")
+BallBodyScene = ExtResource("2_tok1r")
+UprightBodyScene = ExtResource("3_ddoul")
