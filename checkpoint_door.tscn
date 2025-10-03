@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy6q40sfwxjg5"]
+
+[ext_resource type="Script" uid="uid://ci55wqbcqhxho" path="res://checkpoint_door.gd" id="1_tobmq"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0y7ua"]
+specular_color = Color(5.2943824e-07, 0.46050602, 0.46424133, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71rso"]
+size = Vector2(89, 20)
+
+[node name="CheckpointDoor" type="Area2D"]
+script = ExtResource("1_tobmq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(34.5, -8.34465e-07)
+scale = Vector2(89, 20)
+texture = SubResource("CanvasTexture_0y7ua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(34.5, 0)
+shape = SubResource("RectangleShape2D_71rso")
+disabled = true
+debug_color = Color(0.5469737, 0.23974049, 0.114175834, 0.41960785)
