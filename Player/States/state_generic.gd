@@ -12,3 +12,6 @@ func change_state_from(from_state):
 
 func run(delta):
 	pass
+
+func state_draw():
+	pass

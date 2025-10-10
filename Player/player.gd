@@ -19,6 +19,7 @@ func _process(delta):
 	
 	# reduce power to compensate for diagonal angle
 	if wish_dir[0] != 0 and wish_dir[1] != 0:
+		# this is just how 45 degree angle works i swear
 		wish_dir *= 0.7071
 
 func _physics_process(delta):
@@ -26,6 +27,9 @@ func _physics_process(delta):
 		StateMgr.current_state.change_state_from(old_state)
 		old_state = StateMgr.current_state
 	StateMgr.current_state.run(delta)
+
+func _draw():
+	StateMgr.current_state.state_draw()
 
 func change_body(BodyScene: PackedScene):
 	var body_position = self.position
