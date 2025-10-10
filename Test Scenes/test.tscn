@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://mticjsf1wehg"]
+[gd_scene load_steps=7 format=3 uid="uid://mticjsf1wehg"]
 
 [ext_resource type="PackedScene" uid="uid://btc5ll722qbtl" path="res://Player/Player.tscn" id="1_p2iba"]
+[ext_resource type="PackedScene" uid="uid://b1ofidxipfveo" path="res://launchpad.tscn" id="2_al1cx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8uh7m"]
 distance = -594.0
@@ -40,3 +41,6 @@ position = Vector2(48.23, 221.73)
 shape = SubResource("SegmentShape2D_p2iba")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Launchpad" parent="." instance=ExtResource("2_al1cx")]
+position = Vector2(664, 640)
