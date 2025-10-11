@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://slpfm8vy2bd2"]
+
+[sub_resource type="GDScript" id="GDScript_n444j"]
+resource_name = "camera"
+script/source = "extends Camera2D 
+
+
+
+func _process(_delta):
+	global_position.x = 0
+	global_position.y = $\"..\".global_position.y
+"
+
+[node name="Camera2D" type="Camera2D"]
+script = SubResource("GDScript_n444j")

@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bw4jgkrmab3ou"]
+[gd_scene load_steps=3 format=3 uid="uid://bw4jgkrmab3ou"]
+
+[ext_resource type="PackedScene" uid="uid://slpfm8vy2bd2" path="res://Player/Bodies/camera.tscn" id="1_q52x7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n444j"]
 
@@ -8,3 +10,5 @@
 shape = SubResource("RectangleShape2D_n444j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="Camera2D" parent="." instance=ExtResource("1_q52x7")]

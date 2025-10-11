@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://djwty2xl7qsms"]
+[gd_scene load_steps=6 format=3 uid="uid://djwty2xl7qsms"]
 
 [ext_resource type="Script" uid="uid://pkkcci7r4qan" path="res://Player/Bodies/ball_form.gd" id="1_ych2y"]
+[ext_resource type="PackedScene" uid="uid://slpfm8vy2bd2" path="res://Player/Bodies/camera.tscn" id="2_ygg2m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vm5qv"]
 bounce = 0.9
@@ -25,3 +26,5 @@ scale = Vector2(0.74, 0.74)
 shape = SubResource("CircleShape2D_ygg2m")
 target_position = Vector2(0, 5.56)
 max_results = 1
+
+[node name="Camera2D" parent="." instance=ExtResource("2_ygg2m")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://mticjsf1wehg"]
+[gd_scene load_steps=8 format=3 uid="uid://mticjsf1wehg"]
 
 [ext_resource type="PackedScene" uid="uid://btc5ll722qbtl" path="res://Player/Player.tscn" id="1_p2iba"]
 [ext_resource type="PackedScene" uid="uid://b1ofidxipfveo" path="res://launchpad.tscn" id="2_al1cx"]
@@ -12,8 +12,11 @@ bounce = 1.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2iba"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_p2iba"]
-a = Vector2(224.77, 495.27002)
+a = Vector2(438, 208.99998)
 b = Vector2(-58.23, 210.27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_al1cx"]
+size = Vector2(265.77002, 1150.365)
 
 [node name="Node2D" type="Node2D"]
 
@@ -38,9 +41,47 @@ shape = SubResource("CircleShape2D_p2iba")
 position = Vector2(48.23, 221.73)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-4.2299995, 84.270004)
 shape = SubResource("SegmentShape2D_p2iba")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-311.23, -379.72998)
+shape = SubResource("SegmentShape2D_p2iba")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-85.23001, -122.72998)
+shape = SubResource("SegmentShape2D_p2iba")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-678.23, -22.729996)
+shape = SubResource("SegmentShape2D_p2iba")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(13.77002, -452.72998)
+shape = SubResource("SegmentShape2D_p2iba")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-616.23, -278.72998)
+shape = SubResource("SegmentShape2D_p2iba")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-405.23, -575.73)
+shape = SubResource("SegmentShape2D_p2iba")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-412.23, -761.73)
+shape = SubResource("SegmentShape2D_p2iba")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(409.77002, -84.729996)
+shape = SubResource("RectangleShape2D_al1cx")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-706.23, -61.729996)
+shape = SubResource("RectangleShape2D_al1cx")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
-[node name="Launchpad" parent="." instance=ExtResource("2_al1cx")]
-position = Vector2(664, 640)
+[node name="Launchpad2" parent="." instance=ExtResource("2_al1cx")]
+position = Vector2(277, 298)
+force = 500
