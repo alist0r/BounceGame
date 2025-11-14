@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx7sk0v3wr5pq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vm5qv"]
+bounce = 1.0
+
+[sub_resource type="GDScript" id="GDScript_58xl2"]
+script/source = "extends RigidBody2D
+# this is not a state of player
+# the falling form spawns this every frame to make a prediction for the bounce path
+
+func _init(vel):
+	self.linear_velocity = vel
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ych2y"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ygg2m"]
+radius = 25.0
+
+[node name="GhostBall" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_vm5qv")
+inertia = 0.1
+linear_damp = 0.5
+script = SubResource("GDScript_58xl2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ych2y")
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+scale = Vector2(0.74, 0.74)
+shape = SubResource("CircleShape2D_ygg2m")
+target_position = Vector2(0, 5)
+max_results = 1
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
