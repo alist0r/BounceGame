@@ -4,15 +4,11 @@ class_name Physics_Prediction extends Node2D
 @export var ABSORBTION_MULT = 1.5
 @export var EXTRA_ABSORBTION_THRESHOLD = 200
 
-const DASH_SPEED = 1000
-const SLOWDOWN = 5 # must be integer, fraction of original speed
 const SIMULATION_FRAMERATE = 480
 const SIMULATION_TIME = 0.5
 const SIMULATION_DOTS_PER_SECOND = 30
 const DAMPENING = 0.25
 const MAX_BOUNCE_SIM = 5
-var falling_frames = 0
-var fall_time = 0
 var physics_point_list = []
 var hit_points = []
 var parent
@@ -22,7 +18,7 @@ func _init(parent):
 
 func physics_predict(start_pos):
 	var pos = start_pos
-	var vel = parent.player_reference.wish_dir * DASH_SPEED
+	var vel = parent.player_reference.wish_dir * parent.DASH_SPEED
 	var bounces = 0
 	
 	for tick in range(SIMULATION_TIME * SIMULATION_FRAMERATE):
