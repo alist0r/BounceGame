@@ -92,9 +92,7 @@ func _draw():
 		print(physics_point_list)
 	for point in range(len(physics_point_list)):
 		var clr = 1 - (0.5 * point)/len(physics_point_list)
-		draw_circle(physics_point_list[point], 3, \
-			Color(1,1,1,clr), true, true)
+		draw_circle(physics_point_list[point], 3, Color(1,1,1,clr), true)
 
 	for point in range(len(hit_points)):
-		draw_circle(hit_points[point], 6, \
-			Color(1,1,1), true, true)
+		draw_circle(hit_points[point], 6, Color(1,1,1), true)
